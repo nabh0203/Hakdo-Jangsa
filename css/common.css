@@ -1,0 +1,149 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css"); /* font-family: "Pretendard Variable"; */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video { margin: 0; padding: 0; border: 0; font-family: "Pretendard Variable"; vertical-align: baseline; text-decoration: none; list-style: none; color: black; } 
+* { box-sizing: border-box; } 
+
+/* css 초기화 */
+body { height: 8120px; overflow-x:hidden; background-color: black; } 
+p { color: white; } 
+header { width: 1920px; height: 80px; position:fixed; top: 12px; z-index: 5; } 
+.MenuBar { position:fixed; right:100px; font-family: "Pretendard Variable"; width: 540px; height: 80px; display:flex; justify-content:flex-start; padding: 0 35px 0 35px; } 
+.MenuBar ul { display:flex; align-items:center; } 
+.Links { font-size :20px; font-weight :700; text-align :center; font-weight: 400; color :rgb(158, 158, 158); transition :1s } 
+.OneLinks { margin-left :32px } 
+.Links:not(.OneLinks) { margin-left :82px } 
+.Links:hover { color:white; transition :1s } 
+.Logo { width :190px; height :110px; left:150px; top:20px; position:fixed; } 
+/* 헤더 */
+
+
+main { width: 1920px; overflow: hidden; } 
+section { width: 1920px; height: 1080px; } 
+#MainText1 { height: 400px; display: flex; align-items:flex-end; justify-content: center; font-size: 96px; font-weight: 700; z-index: 0; } 
+#SubText1 { height: 200px; display: flex; align-items:flex-end; justify-content: center; font-size: 64px; text-align: center; } 
+#SubText2 { margin-top: 10px; height: 80px; display: flex; align-items:flex-end; justify-content: center; font-size: 64px; left:449px; top: 1339px; z-index: 0; text-align: center; } 
+#bold { font-size: 78px; font-weight: 700; color: white; } 
+
+#Scroll-Img { margin-left: 900px; width: 120px; height: 500px; transition: transform 0.5s ease-in-out; display: flex; align-items:flex-start; justify-content: flex-start; margin-top: 170px; } 
+#Scroll-Img:hover { transform: translateY(-10px); } 
+/* paln 섹션 */
+
+.plan { position: relative; margin-top: 100px; } 
+#Img-box1 { position: absolute; top: 235px; left: 220px; } 
+#Textbox { position: absolute; width: 470px; height: 271px; left: 1230px; top: 390px; } 
+#MainText3 { width: 475px; height: 50px; font-size: 40px; font-weight: 700; } 
+#SubText3 { font-size:24px; font-weight: 400; } 
+#SubText3-1 { width: 470px; height: 130px; font-size:20px; font-weight: 300; margin-top: 30px; } 
+#semilbold { width: 470px; height: 60px; font-size:24px; font-weight: 600;; color: white; margin-top: 60px; } 
+/* 텍스트 구간 */
+.card {height: 1200px; position: relative;} 
+.Wrap { width: 1920px; height: 540px; position: absolute; left: 70px; transition-duration: 0.5s linear; } 
+
+.item { width: 320px; height: 435px; background-color: white; color: white; /* flex 설정 */
+display: flex; /* 애니메이션 추가 */
+transition-property: transform, left; transition-duration: 1s; /* 펼쳐지는 데 걸리는 시간 */
+position: absolute; } 
+
+#textBox { width: 925px; height: 250px; position: absolute; left: 1480px; top: 100px; text-align: center; } 
+#Card-mainText { font-size: 64px; font-weight: 700; } 
+#Card-subText { margin-top: 50px; font-size: 24px; } 
+
+.bold2 { font-size: 30px; font-weight: 700; color: white; margin-bottom: 45px; } 
+#planImg1 { width: 640px; height: 275px; background-color: white; position: absolute; top: 355px; left: 310px; } 
+#planImg2 { width: 640px; height: 275px; background-color: white; position: absolute; top: 775px; right: 310px; } 
+#planText1 { width: 470px; height: 190px; text-align: left; position: absolute; top: 480px; right: 440px; } 
+#planText2 { width: 470px; height: 190px; text-align: right; position: absolute; position: absolute; top: 900px; left: 440px; } 
+
+.story { height: 1700px; position: relative; } 
+#planImg3 { width: 735px; height: 420px; position: absolute; left: 310px; bottom: 640px; } 
+#planImg4 { width: 735px; height: 420px; position: absolute; right: 310px; bottom: 110px; } 
+#Boximg { width: 350px; height: 200px; background-color: white; display: inline-block; margin: 7.5px; } 
+.storytext { width: 870px; height: 260px; position: absolute; left: 310px; top: 275px; } 
+#planText3 { width: 870px; height: 180px; } 
+
+.bold3 { width: 240px; height: 110px; font-size: 40px; font-weight: 700; } 
+.semibold { width: 335px; height: 25px; font-weight: 600; margin-top: 40px; } 
+#planText4 { width: 535px; height: 310px; line-height: 25px; margin-top: 30px; color: rgb(118,118 ,118); } 
+.Character { width: 1920px; height: 1080px; position: relative; } 
+.CharacterText { width: 1020px; height: 1080px; position: absolute; left: 350px; top: 310px; } 
+
+#character { width: 510px; height: 760px; background-color: blue; position: absolute; left: 1010px; top: 150px; } 
+
+#hackdo { color: rgb(118,118 ,118); } 
+#south { color: rgb(118,118 ,118); } 
+#north { color: rgb(118,118 ,118); } 
+
+
+.object { width: 1920px; height: 1500px; position: relative; } 
+#object-p { font-size: 50px; font-weight: 700; position: absolute; left: 200px; top: 200px; } 
+#subobject-p { color: white; font-size: 24px; font-weight: 400; } 
+#object-img { width: 1830px; height: 720px; position: absolute; top: 485px; left: 60px; overflow: hidden; } 
+#object-img img { padding: 5.5px; } 
+#object-img-first { display: flex; justify-content: center; align-items: flex-start; } 
+#object-img-first img:nth-child(1)
+{padding: 5px 7.5px 5px 0 ; }
+#object-img-first img:nth-child(4)
+{padding: 5px 0 5px 5px; }
+#object-img-second { display: flex; justify-content: center; align-items: flex-end; } 
+#object-img-third { width: 545px; height: 345px; display:inline-block;} 
+#object-img-third img:nth-child(1)
+{ padding: 0 2px 2px 0 ;} 
+
+#object-img-third img:nth-child(2)
+{ padding: 0 0 2px 6px;} 
+
+#object-img-third img:nth-child(3)
+{ padding: 2px 0 0 0;} 
+
+.img-container { width: 200%; /* 이미지 집합의 너비를 두 배로 설정하여 복제된 이미지 집합이 한 줄에 나타나도록 합니다. */
+ display: flex; /* 이미지 집합들이 가로로 나열되도록 합니다. */
+ animation: slide 20s linear infinite; /* 애니메이션 적용 */}
+.img-set { width: 100%; /* 각 이미지 집합의 너비를 50%로 설정하여 한 이미지 집합이 화면 너비를 차지하도록 합니다. */
+ /* 여기에 이미지에 관한 스타일을 적용하세요. */}
+
+/* 애니메이션 키 프레임 설정 */
+@keyframes slide { 
+0% { transform: translateX(0); } 
+100% { transform: translateX(-50%); } 
+}
+
+.map{position: relative;}
+#map-p{width: 460px; height: 170px; font-size: 40px; font-weight: 700; position: absolute; left: 200px; top: 350px;}
+#submap-p{ color: rgb(118,118 ,118);font-size: 20px; font-weight: 400; position: absolute; left: 200px;top: 470px;}
+.map-img{width: 835px;height: 565px; position: absolute; top: 155px; left: 800px;}
+.map-img img{padding: 8.5px;}
+
+
+
+.color { width: 1920px; height: 2000px; position: relative; } 
+#color-p { font-size: 50px; font-weight: 700; position: absolute; left: 245px; top: 170px; } 
+#subcolor-p1{font-size: 40px; font-weight: 700; margin-bottom: 20px;}
+#color-bar1{position: absolute;left: 690px; top: 0px;}
+#subcolor-p2{font-size: 40px; font-weight: 700; margin-bottom: 20px; text-align: right;}
+#color-bar2{position: absolute;left: -380px; top: 0px;}
+#subcolor-p3{font-size: 40px; font-weight: 700; margin-bottom: 20px;}
+#color-bar3{position: absolute;left: 690px; top: 0px;}
+.color-img1{position: absolute; left: 245px; top: 480px;}
+.color-img2{position: absolute; left: 935px; top: 960px;}
+.color-img3{position: absolute; left: 245px; top: 1440px;}
+
+.function{width: 1920px; height: 1080px; position: relative;}
+.function-p{ font-size: 40px; font-weight: 700; position: absolute; left: 360px; color: white;}
+.subfunction-p{font-size: 24px; font-weight: 600; color: rgb(118,118 ,118);position: absolute; left: 360px; margin-top: 130px;}
+.bt{width: 90px; height: 50px;}
+.function-img{width: 820px; height: 520px; background-color: aqua; position: absolute;left: 860px}
+footer { width: 1920px; height: 35px;  color: white; position: fixed; bottom: 30px; z-index: 4; left:150px;font-size: 20px;} 
+
+

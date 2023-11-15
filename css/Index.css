@@ -1,0 +1,58 @@
+/* 텍스트 구간 */
+body{height: 8120px;}
+main {width: 1620px; overflow: hidden;}
+
+
+#firstLink { color: white; transition: 1s; } 
+
+main { position: relative; } 
+
+#MainText2 { position: absolute; font-size: 96px; font-weight: 700; left:330px; top: 1099px; z-index: 0; } 
+
+#SubText2 { position:absolute; font-size: 64px; left:449px; top: 1339px; z-index: 0; text-align: center; } 
+#bold { font-size: 78px; font-weight: 700; } 
+
+#Scroll-Img { position: relative; left: 750px; top: 760px; } 
+
+#Img-box1 { width: 750px; height: 500px; background-color: rgb(177, 177, 177); position: absolute; left: 120px; top: 1945px; } 
+
+
+
+#Textbox { position: absolute; left: 1014px; top: 2054px; } 
+#MainText3 { font-size: 40px; font-weight: 700; } 
+#SubText3 { font-size:24px; font-weight: 400; } 
+#SubText3-1 { width: 471px; height: 129px; font-size:20px; font-weight: 300; position: absolute; top: 190px; } 
+#semilbold { width: 471px; height: 56px; font-size:24px; font-weight: 600; position: absolute; top: -58px; } 
+
+
+/* 카드 무빙 */
+#main3{
+    height: 4000px;
+    width: 1920px;
+    overflow: hidden;}
+
+.Wrap {width: 1380px;height: 540px; position: relative; left: 160px; top: 106px;transition-duration: 0.5s linear; } 
+
+
+.item { width: 320px; height: 435px; background-color: black; color: white;
+ /* flex 설정 */
+display: flex;
+ /* 애니메이션 추가 */
+ transition-property: transform, left; transition-duration: 1s;/* 펼쳐지는 데 걸리는 시간 */
+position: absolute; 
+/* position 속성을 absolute로 변경 */}
+/* #item1 {z-index: 5;} */
+/*  position: fixed; width: 400px; height: 540px; background-color: black;
+        left: 160px; top: 206px */
+/* color: white; position: fixed; left: 263px; top: 1000px; */
+#item2 { left: 420px; /* item2의 초기 위치 설정 */}
+
+#item3 { left: 840px; /* item3의 초기 위치 설정*/}
+
+#item4 { left: 1260px; /* item3의 초기 위치 설정*/}
+
+#textBox { position: absolute; left: 487px; top: 1960px; }
+
+#Card-mainText { font-size: 64px; font-weight: 700;} 
+
+#Card-subText { font-size: 24px; } 
