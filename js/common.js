@@ -21,6 +21,9 @@
                 const scrollContent = $('.Wrap');
             
                 $(window).on('scroll', function () {
+                    $('#toTop').click(function() {
+                        $('html, body').stop().animate({scrollTop: 0}, 800);
+                    });
                     var documentHeight = $(document).height();
                     var windowHeight = $(window).height();
                     var scrollPos = $(window).scrollTop();
@@ -29,12 +32,12 @@
                     var cardHeight = $('.card').height();
                     var wrapHeight = $('.Wrap').height();
                     var bottomValue = cardHeight - wrapHeight;
-
+                    
                     const actions = [ 
                         { pos: 3000, action: () => { 
                             $('.Wrap').fadeOut();
                         }}, 
-                        { pos: 2900, action: () => {
+                        { pos: 2800, action: () => {
                             $('.Wrap').fadeIn();
                             $('#textBox').fadeIn();
                         }},                       
@@ -84,6 +87,54 @@
                         }
                     }
                 });
+            //     if ($(this).scrollTop() > 200) {
+            //         $('#toTop').fadeIn();
+            //     } else {
+            //         $('#toTop').fadeOut();
+            //     }
+            // });
+        
+           
             });
-            
-            });
+            var content = {
+                1: {
+                    img: './Img/function/1.png',
+                    mainText: '조이스틱 조작법 숙련을<br> 위한 훈련 시작',
+                    subText: '사용자는 콘텐츠 조작법을 익힐수 있습니다. '
+                },
+                2: {
+                    img: './Img/function/2.png',
+                    mainText: '보트를 타고 성공적으로<br> 밧줄을 묶어라!',
+                    subText: '사용자는 보트에 탑승하여 정착 후<br> 메인 콘텐츠를 즐기게 됩니다. '
+                },
+                3: {
+                    img: './Img/function/3.png',
+                    mainText: '200고지를<br> 탈환하라!',
+                    subText: '사용자는 주어진 총기와 한정된 수류탄을 가지고<br> 적군에게서 200고지를 탈환해야 합니다.'
+                },
+                4: {
+                    img: './Img/function/4.png',
+                    mainText: '진입로에 폭탄을 <br>설치하고 봉쇄하라!',
+                    subText: '사용자는 지정된 위치에 폭탄을 설치하고<br> 빠르게 떠나야 합니다!'
+                },
+                5: {
+                    img: './Img/function/5.png',
+                    mainText: '적군을 해치우며<br> 배까지 전진하라!',
+                    subText: '사용자는 눈앞에 적들을 해치우고<br> 배까지 전진하여만 합니다.'
+                },
+                6: {
+                    img: './Img/function/6.png',
+                    mainText: '구조선을 타고 <br>탈출하라!',
+                    subText: '사용자는 앞선 적들을 해치우고 배에 탑승하면<br> 그에 따른 엔딩을 볼수 있습니다.'
+                },
+            };
+        
+            window.onload = function() {
+                window.changeContent = function(num) {
+                    var selectedContent = content[num];
+                    document.getElementById('function-img').src = selectedContent.img;
+                    document.getElementById('function-p').innerHTML = selectedContent.mainText;
+                    document.getElementById('subfunction-p').innerHTML = selectedContent.subText;
+                }
+            }
+        });
