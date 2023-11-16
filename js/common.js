@@ -1,38 +1,17 @@
-    $(document).ready(function() {
-        // 모든 section 태그를 선택합니다
-        var sections = document.getElementsByTagName('section');
-
-        // offset 정보를 표시할 div 요소를 선택합니다
-        var infoContainer = document.getElementById('offsetInfo');
-
-        // 각 section에 대해 반복 처리합니다
-        for (var i = 0; i < sections.length; i++) {
-            // 새로운 p 요소를 생성합니다
-            var infoElement = document.createElement('p');
-
-            // p 요소의 내용을 현재 section의 id와 offsetTop 값으로 설정합니다
-            infoElement.textContent = sections[i].id + ': ' + sections[i].offsetTop;
-
-            // p 요소를 infoContainer에 추가합니다
-            infoContainer.appendChild(infoElement);
-        }
-            $(document).ready(function () {
-                const scrollSection = $('#main3');
-                const scrollContent = $('.Wrap');
-            
+                $(document).ready(function () {
+                var previousScroll = 0;
+                $('#toTop').click(function() {
+                    $('html, body').stop().animate({scrollTop: 0}, 800);
+                });
                 $(window).on('scroll', function () {
-                    $('#toTop').click(function() {
-                        $('html, body').stop().animate({scrollTop: 0}, 800);
-                    });
-                    var documentHeight = $(document).height();
-                    var windowHeight = $(window).height();
                     var scrollPos = $(window).scrollTop();
-                    var scrollableHeight = documentHeight - windowHeight;
-                    let fadedOut = false;
-                    var cardHeight = $('.card').height();
-                    var wrapHeight = $('.Wrap').height();
-                    var bottomValue = cardHeight - wrapHeight;
+                    var characterSectionTop = $(".Character").offset().top;
+                    var characterSectionBottom = characterSectionTop + $(".Character").outerHeight();
+                    var characterTextHeight = $(".CharacterText").outerHeight();
+                    var currentScroll = $(this).scrollTop();
+                    var relativeScroll = currentScroll - characterSectionTop;
                     
+
                     const actions = [ 
                         { pos: 3000, action: () => { 
                             $('.Wrap').fadeOut();
@@ -51,7 +30,6 @@
                         { pos: 2300, action: () => { 
                             $('#item3').css('left', '430px'); 
                             $('#item4').css('left', '780px'); 
-                            //$('#textBox').css("left","1230px");
                             $('#textBox').hide();
                             gsap.to('.Wrap', { position: "fixed", top: "270px" });
                             } },
@@ -59,7 +37,6 @@
                             $('#item2').css('left', '430px'); 
                             $('#item3').css('left', '780px');
                             $('#item4') .css('left','1130px');
-                            //$("#textBox").css("left","1480px")
                             gsap.to('.Wrap', { position: "fixed", top:"270px",left:"0px"});
                             
                         }},
@@ -74,7 +51,6 @@
                                 $("#item2").css("left","780px")
                                 $("#item3").css("left","1130px")
                                 $("#item4").css("left","1480px")
-                                //$("#textBox").css("left","1960px")
                             fadeOutApplied = true;
                             }
                         }
@@ -86,15 +62,38 @@
                             break;
                         }
                     }
+
+                    if($(window).scrollTop() >= characterSectionTop && $(window).scrollTop() <= characterSectionBottom - characterTextHeight) {
+                        if(currentScroll > previousScroll) { 
+                            $(".CharacterText").css({"position": "fixed", "top": "0"});
+                        } else { 
+                            $(".CharacterText").css({"position": "fixed", "top": "0"});
+                        }
+                
+                        if(relativeScroll < 980) {
+                            // 학도병
+                            $("#hackdo").css({"color": "white", "font-weight": "700"});
+                            $("#south, #north").css({"color": "rgb(118,118 ,118)", "font-weight": "normal"});
+                            $("#Hakcdo")[0].play();
+                        } else if(relativeScroll >= 980 && relativeScroll < 1960) {
+                            // 남한군
+                            $("#south").css({"color": "white", "font-weight": "700"});
+                            $("#hackdo, #north").css({"color": "rgb(118,118 ,118)", "font-weight": "normal"});
+                            $("#South")[0].play();
+                        } else {
+                            // 북한군
+                            $("#north").css({"color": "white", "font-weight": "700"});
+                            $("#hackdo, #south").css({"color": "rgb(118,118 ,118)", "font-weight": "normal"});
+                            $("#North")[0].play();
+                        }
+                    } else if ($(window).scrollTop() < characterSectionTop) {
+                        $(".CharacterText").css({"position": "absolute", "top": "0px"});
+                    } else {
+                        $(".CharacterText").css({"position": "absolute", "top": "2200px"});
+                    }
+                
+                    previousScroll = currentScroll;
                 });
-            //     if ($(this).scrollTop() > 200) {
-            //         $('#toTop').fadeIn();
-            //     } else {
-            //         $('#toTop').fadeOut();
-            //     }
-            // });
-        
-           
             });
             var content = {
                 1: {
@@ -132,9 +131,23 @@
             window.onload = function() {
                 window.changeContent = function(num) {
                     var selectedContent = content[num];
-                    document.getElementById('function-img').src = selectedContent.img;
-                    document.getElementById('function-p').innerHTML = selectedContent.mainText;
-                    document.getElementById('subfunction-p').innerHTML = selectedContent.subText;
-                }
-            }
-        });
+            
+                    var imgElement = document.getElementById('function-img');
+                    var mainTextElement = document.getElementById('function-p');
+                    var subTextElement = document.getElementById('subfunction-p');
+            
+                    imgElement.style.opacity = 0;
+                    mainTextElement.style.opacity = 0;
+                    subTextElement.style.opacity = 0;
+            
+                    setTimeout(function() {
+
+                        imgElement.src = selectedContent.img;
+                        mainTextElement.innerHTML = selectedContent.mainText;
+                        subTextElement.innerHTML = selectedContent.subText;
+            
+                        imgElement.style.opacity = 1;
+                        mainTextElement.style.opacity = 1;
+                        subTextElement.style.opacity = 1;
+                    }, 1000); 
+                }};

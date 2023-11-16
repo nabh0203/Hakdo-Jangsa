@@ -18,16 +18,16 @@
         <nav class="MenuBar">
             <ul>
                 <li>
-                    <p class="Links OneLinks">기획</p>
+                    <a href="#plan" class="Links OneLinks">기획</a>
                 </li>
                 <li>
-                    <p class="Links">디자인</p>
+                    <a href="#design" class="Links">디자인</a>
                 </li>
                 <li>
-                    <p class="Links">기능</p>
+                    <a href="#function" class="Links">기능</a>
                 </li>
                 <li>
-                    <p class="Links">작업팀</p>
+                    <a href="#team" class="Links">작업팀</a>
                 </li>
             </ul>
         </nav>
@@ -46,7 +46,7 @@
                 <img src="./Img/ScrollImg2.png" alt="Scroll">
             </div>
         </section>
-        <section class="plan">
+        <section class="plan" id="plan">
             <div id="Img-box1">
                 <img src="./Img/Graph.png" alt="imgbox">
             </div>
@@ -72,7 +72,7 @@
                     <p id="Card-subText">이와 같은 문제점을 해결하기 위해 현대 학생과 나이대가 같은 학도병들의 이야기를 나누고자합니다.</p>
                 </div>
             </div>
-            
+
         </section>
         <section class="plan2">
             <div id="planImg1">
@@ -107,10 +107,10 @@
                 <div id="Boximg"><img src="./Img/stroy/4.png"></div>
             </div>
             <div id="planImg4">
-                <img src="./Img/stroy/5.png">
-                <img src="./Img/stroy/6.png">
-                <img src="./Img/stroy/7.png">
-                <img src="./Img/stroy/8.png">
+                <div id="Boximg"><img src="./Img/stroy/5.png"></div>
+                <div id="Boximg"><img src="./Img/stroy/6.png"></div>
+                <div id="Boximg"><img src="./Img/stroy/7.png"></div>
+                <div id="Boximg"><img src="./Img/stroy/8.png"></div>
             </div>
             <article class="storytext">
                 <p class="bold2">SCENARIO</p>
@@ -124,12 +124,15 @@
                 </p>
             </article>
         </section>
-        <section class="Character">
+        <section class="Character" id="design">
             <div id="character">
-
+                <video src="./Video/Hagdo.mp4" id="Hakcdo" autoplay Loop></video>
+                <video src="./Video/South.mp4" id="South" autoplay Loop></video>
+                <video src="./Video/North.mp4" id="North" autoplay Loop></video>
             </div>
             <article class="CharacterText">
-                <p class="bold3">CHARACTER MODELING</p>
+                <p class="bold3">CHARACTER<br>
+                    MODELING</p>
                 <p class="semibold">현실감 있는 느낌을 위해 실사느낌으로 제작</p>
                 <p id="planText4">
                     캐릭터<br> <br>
@@ -146,7 +149,7 @@
 
                     <span id="north">
                         - 북한군 <br>
-                        (캐릭터, 군복, 장구류, 군화(유료모델링 사용))<br>
+                        (캐릭터, 군복, 장구류, 군화(유료모델링 사용))
                     </span>
                 </p>
             </article>
@@ -202,9 +205,9 @@
         <section class="map">
             <p id="map-p">
                 BACKGROUND MODELING<br>
-                <p id="submap-p">
-                    폭격이 일어난 후 망가진 자연환경과 황무지가 된 배경으로,<br> 실제 장사리 사진을 참고하여 모델을 하였습니다.
-                </p>
+            <p id="submap-p">
+                폭격이 일어난 후 망가진 자연환경과 황무지가 된 배경으로,<br> 실제 장사리 사진을 참고하여 모델을 하였습니다.
+            </p>
             </p>
             <div class="map-img">
                 <img src="./Img/map/1.png">
@@ -222,7 +225,7 @@
                     <img src="./Img/color/colorbar1.png">
                 </div>
             </div>
-            
+
             <div class="color-img2">
                 <img src="./Img/color/200.png">
                 <div id="color-bar2">
@@ -238,16 +241,16 @@
                 </div>
             </div>
         </section>
-        <section class="function">
+        <section class="function" id="function">
             <p class="function-p" id="function-p">
                 조이스틱 조작법 숙련을<br>
                 위한 훈련 시작
-                <p class="subfunction-p" id="subfunction-p">
-                    사용자는 콘텐츠 조작법을 익힐수 있습니다.
-                </p>
+            <p class="subfunction-p" id="subfunction-p">
+                사용자는 콘텐츠 조작법을 익힐수 있습니다.
+            </p>
             </p>
             <div class="function-img">
-                <img id="function-img" src="./Img/function/1.png" >
+                <img id="function-img" src="./Img/function/1.png">
                 <div class="bts">
                     <button class="bt" id="bt1" onclick="changeContent(1)">Sin.01</button>
                     <button class="bt" id="bt2" onclick="changeContent(2)">Sin.02</button>
@@ -264,11 +267,23 @@
             </p>
             <video id="playvideo" controls src="./Video/Play2.mp4"></video>
         </section>
-        <section></section>
+        <section class="Team" id="team">
+            <div id="teamtop">
+                <img src="./Img/Team/team-3.png">
+            </div>
+            <div id="teammiddle">
+                <img src="./Img/Team/team.png">
+                <img src="./Img/Team/team-1.png">
+                <img src="./Img/Team/team-2.png">
+            </div>
+            <div id="teambottom">
+                <img src="./Img/Team/team-4.png">
+                <img src="./Img/Team/team-5.png">
+                <img src="./Img/Team/team-6.png">
+            </div>
+        </section>
     </main>
     <footer>Copyright (C) 2023 Hagdo all rights reserved.</footer>
-
-    <div id="offsetInfo" style="position: fixed; bottom: 0; left: 0;"></div>
 </body>
 
 </html>

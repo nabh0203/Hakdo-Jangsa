@@ -36,11 +36,11 @@ section { width: 1920px; height: 1080px; position: relative; }
 #SubText1 { width: 370px; height: 90px; font-size: 30px; text-align: left; position: absolute; left: 120px; bottom: 145px; } 
 #bold { font-size: 40px; font-weight: 700; color: white; } 
 
-#Scroll-Img { position: absolute; width: 120px; height: 500px; transition: transform 0.5s ease-in-out; left: 860px; top: 970px; } 
+#Scroll-Img { position: absolute; width: 120px; height: 500px; transition: transform 0.5s ease-in-out; left: 860px; top: 970px;z-index: 4; } 
 #Scroll-Img:hover { transform: translateY(-10px); } 
 /* paln 섹션 */
 
-.plan { position: relative; margin-top: 100px;background-image: url(../Img/background4.png); } 
+.plan {height: 1080px; position: relative; margin-top: 100px;background-image: url(../Img/background4.png); } 
 .plan2 { position: relative; margin-top: 100px;} 
 #Img-box1 { position: absolute; top: 235px; left: 300px; } 
 #Textbox { position: absolute; width: 470px; height: 271px; left: 1020px; top: 350px; } 
@@ -74,14 +74,15 @@ position: absolute; }
 .storytext { width: 870px; height: 260px; position: absolute; left: 310px; top: 275px; } 
 #planText3 { width: 870px; height: 180px; } 
 
-.bold3 { width: 240px; height: 110px; font-size: 40px; font-weight: 700; } 
-.semibold { width: 335px; height: 25px; font-weight: 600; margin-top: 40px; } 
-#planText4 { width: 535px; height: 310px; line-height: 25px; margin-top: 30px; color: rgb(118,118 ,118); } 
-.Character { width: 1920px; height: 1080px; position: relative; } 
-.CharacterText { width: 1020px; height: 1080px; position: absolute; left: 350px; top: 310px; } 
+.bold3 { width: 535px; height: 110px; font-size: 40px; font-weight: 700; } 
+.semibold { width: 535px; height: 25px; font-weight: 600; margin-top: 40px; transition: all 0.5s ease-out;} 
+#planText4 { width: 535px; height: 310px; line-height: 25px; margin-top: 30px; color: rgb(171, 171, 171); } 
 
-#character { width: 510px; height: 760px; background-color: blue; position: absolute; left: 1010px; top: 150px; } 
+.Character { width: 1920px; height: 3240px; position: relative; } 
+.CharacterText { width: 980px; height: 1080px;display: flex;flex-direction: column;justify-content: center;align-items:center;z-index: 6; } 
 
+#character{ width:980px; height: 1080px; position: absolute;right: 0; top: 50px;} 
+#character video{width: 980px; height: 980px; margin-top: 100px;}
 #hackdo { color: rgb(118,118 ,118); } 
 #south { color: rgb(118,118 ,118); } 
 #north { color: rgb(118,118 ,118); } 
@@ -146,16 +147,21 @@ padding: 2px 0 0 0; }
 .color-img3 { position: absolute; left: 245px; top: 1440px; } 
 
 .function { width: 1920px; height: 1080px; position: relative; } 
-.function-p { font-size: 40px; font-weight: 700; position: absolute; left: 360px; color: white; } 
-.subfunction-p { font-size: 24px; font-weight: 600; color: rgb(118,118 ,118); position: absolute; left: 360px; margin-top: 130px; } 
+.function-p { font-size: 40px; font-weight: 700; position: absolute; left: 360px; top:200px; color: white; } 
+.subfunction-p { font-size: 24px; font-weight: 600; color: rgb(118,118 ,118); position: absolute; left: 360px; margin-top: 330px; } 
 .bts { width: 565px; height: 50px; position: absolute; bottom: -65px; } 
-.bt { width: 90px; height: 50px; font-size: 20px; font-weight: 500; } 
-.function-img { width: 810px; height: 520px; position: absolute; left: 860px; justify-content: flex-start; } 
-
+.bt { width: 90px; height: 50px; font-size: 20px; font-weight: 500; color: black; border-radius: 10px;} 
+.function-img { width: 810px; height: 520px; position: absolute; left: 860px; justify-content: flex-start;top:200px; } 
+#function-img, #function-p, #subfunction-p {transition: all 0.3s ease-in-out;}
 .play{position: relative;}
 #play-p{font-size: 40px; font-weight: 700; color: white; position: absolute; left: 260px; top: 90px;}
 #playvideo{width: 1280px; height: 720px;position: absolute; left: 330px;top: 190px;}
 
+.Team{height: 2240px; position: relative; background-image: url(../Img/footer.png);}
+.Team img{width: 300px;margin: 30px;}
+#teamtop{width: 1920px; display: flex;justify-content: center;}
+#teammiddle{width: 1920px; display: flex;justify-content: center;}
+#teambottom{width: 1920px; display: flex;justify-content: center;}
 footer { width: 1920px; height: 35px; color: rgb(141, 141, 141); position: fixed; bottom: 30px; z-index: 4; left:150px; font-size: 20px; } 
 
 
