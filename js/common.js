@@ -1,10 +1,35 @@
-                $(document).ready(function () {
-                var previousScroll = 0;
+            $(document).ready(function () {
+                var previousScroll = 0; // 여기에서 previousScroll 변수를 선언하고 초기값을 할당합니다.
+                var i = 0;
+                var images = ['../Img/mainBack.png', '../Img/mainBack2.png', '../Img/mainBack3.png', '../Img/mainBack4.png']; // 여기에 이미지 경로를 넣으세요.
+                var intervalID = null;
+
+                function changeBackground() {
+                    if(i%2 == 0) {
+                        $('.Main .top').css('background-image', 'url(' + images[i] + ')');
+                        $('.Main .top').css('opacity', '1');
+                        $('.Main .bottom').css('opacity', '0');
+                    } else {
+                        $('.Main .bottom').css('background-image', 'url(' + images[i] + ')');
+                        $('.Main .bottom').css('opacity', '1');
+                        $('.Main .top').css('opacity', '0');
+                    }
+                    i = i + 1;
+                    if (i == images.length) {
+                        i =  0;
+                    }
+                }
+            
+                setInterval(changeBackground, 5000);
+
                 $('#toTop').click(function() {
                     $('html, body').stop().animate({scrollTop: 0}, 800);
+                    if(intervalID) {
+                        clearInterval(intervalID);
+                    }
+                    intervalID = setInterval(changeBackground, 1000);
                 });
                 $(window).on('scroll', function () {
-                    var scrollPos = $(window).scrollTop();
                     var characterSectionTop = $(".Character").offset().top;
                     var characterSectionBottom = characterSectionTop + $(".Character").outerHeight();
                     var characterTextHeight = $(".CharacterText").outerHeight();
@@ -12,57 +37,7 @@
                     var relativeScroll = currentScroll - characterSectionTop;
                     
 
-                    const actions = [ 
-                        { pos: 3000, action: () => { 
-                            $('.Wrap').fadeOut();
-                        }}, 
-                        { pos: 2800, action: () => {
-                            $('.Wrap').fadeIn();
-                            $('#textBox').fadeIn();
-                        }},                       
-                        { pos: 2600, action: () => { 
-                            $('#item4').css('left', '430px'); 
-                            $('#textBox').css("left","880px");
-                            $('#textBox').fadeOut();
-                            gsap.to('.Wrap', { position: "fixed", top: "270px" });
-                            } },
-
-                        { pos: 2300, action: () => { 
-                            $('#item3').css('left', '430px'); 
-                            $('#item4').css('left', '780px'); 
-                            $('#textBox').hide();
-                            gsap.to('.Wrap', { position: "fixed", top: "270px" });
-                            } },
-                        { pos: 2000, action: () => { 
-                            $('#item2').css('left', '430px'); 
-                            $('#item3').css('left', '780px');
-                            $('#item4') .css('left','1130px');
-                            gsap.to('.Wrap', { position: "fixed", top:"270px",left:"0px"});
-                            
-                        }},
-                        {
-                            pos : 0,
-                            action : ()=> {
-                                gsap.to(".Wrap",{
-                                    position:"static"
-                                })
-                                $("#textBox").hide()
-                                $("#item1").css("left","430px")
-                                $("#item2").css("left","780px")
-                                $("#item3").css("left","1130px")
-                                $("#item4").css("left","1480px")
-                            fadeOutApplied = true;
-                            }
-                        }
-                    ];
-            
-                    for(let i=0; i<actions.length; i++) {
-                        if(scrollPos >= actions[i].pos) {
-                            actions[i].action();
-                            break;
-                        }
-                    }
-
+                    
                     if($(window).scrollTop() >= characterSectionTop && $(window).scrollTop() <= characterSectionBottom - characterTextHeight) {
                         if(currentScroll > previousScroll) { 
                             $(".CharacterText").css({"position": "fixed", "top": "0"});
@@ -75,7 +50,7 @@
                             $("#hackdo").css({"color": "white", "font-weight": "700"});
                             $("#south, #north").css({"color": "rgb(118,118 ,118)", "font-weight": "normal"});
                             $("#Hakcdo")[0].play();
-                        } else if(relativeScroll >= 980 && relativeScroll < 1960) {
+                        } else if(relativeScroll >= 980 && relativeScroll < 2060) {
                             // 남한군
                             $("#south").css({"color": "white", "font-weight": "700"});
                             $("#hackdo, #north").css({"color": "rgb(118,118 ,118)", "font-weight": "normal"});
@@ -89,65 +64,72 @@
                     } else if ($(window).scrollTop() < characterSectionTop) {
                         $(".CharacterText").css({"position": "absolute", "top": "0px"});
                     } else {
-                        $(".CharacterText").css({"position": "absolute", "top": "2200px"});
+                        $(".CharacterText").css({"position": "absolute", "top": "2260px"});
                     }
                 
                     previousScroll = currentScroll;
                 });
             });
             var content = {
-                1: {
-                    img: './Img/function/1.png',
-                    mainText: '조이스틱 조작법 숙련을<br> 위한 훈련 시작',
-                    subText: '사용자는 콘텐츠 조작법을 익힐수 있습니다. '
-                },
-                2: {
-                    img: './Img/function/2.png',
-                    mainText: '보트를 타고 성공적으로<br> 밧줄을 묶어라!',
-                    subText: '사용자는 보트에 탑승하여 정착 후<br> 메인 콘텐츠를 즐기게 됩니다. '
-                },
-                3: {
-                    img: './Img/function/3.png',
-                    mainText: '200고지를<br> 탈환하라!',
-                    subText: '사용자는 주어진 총기와 한정된 수류탄을 가지고<br> 적군에게서 200고지를 탈환해야 합니다.'
-                },
-                4: {
-                    img: './Img/function/4.png',
-                    mainText: '진입로에 폭탄을 <br>설치하고 봉쇄하라!',
-                    subText: '사용자는 지정된 위치에 폭탄을 설치하고<br> 빠르게 떠나야 합니다!'
-                },
-                5: {
-                    img: './Img/function/5.png',
-                    mainText: '적군을 해치우며<br> 배까지 전진하라!',
-                    subText: '사용자는 눈앞에 적들을 해치우고<br> 배까지 전진하여만 합니다.'
-                },
-                6: {
-                    img: './Img/function/6.png',
-                    mainText: '구조선을 타고 <br>탈출하라!',
-                    subText: '사용자는 앞선 적들을 해치우고 배에 탑승하면<br> 그에 따른 엔딩을 볼수 있습니다.'
-                },
+                1: {img: './Img/function/1.png'},
+                2: {img: './Img/function/2.png'},
+                3: {img: './Img/function/3.png'},
+                4: {img: './Img/function/4.png'},
+                5: {img: './Img/function/6.png'}
             };
         
             window.onload = function() {
-                window.changeContent = function(num) {
+                window.changeContent = function(num, selectedElement) {
                     var selectedContent = content[num];
             
                     var imgElement = document.getElementById('function-img');
                     var mainTextElement = document.getElementById('function-p');
-                    var subTextElement = document.getElementById('subfunction-p');
-            
                     imgElement.style.opacity = 0;
-                    mainTextElement.style.opacity = 0;
-                    subTextElement.style.opacity = 0;
             
                     setTimeout(function() {
-
                         imgElement.src = selectedContent.img;
-                        mainTextElement.innerHTML = selectedContent.mainText;
-                        subTextElement.innerHTML = selectedContent.subText;
-            
                         imgElement.style.opacity = 1;
-                        mainTextElement.style.opacity = 1;
-                        subTextElement.style.opacity = 1;
-                    }, 1000); 
-                }};
+                    }, 500); 
+            
+                    var buttons = document.querySelectorAll('.bt');
+                    for (var i = 0; i < buttons.length; i++) {
+                        if (buttons[i] === selectedElement) {
+                            buttons[i].style.color = 'white';
+                        } else {
+                            buttons[i].style.color = 'rgba(255, 255, 255, 0.23)';
+                        }
+                    }
+                }
+                var videoElement = document.getElementById('playvideo');
+                var playButtonElement = document.getElementById('playbt');
+
+                playButtonElement.addEventListener('click', function() {
+                    if (videoElement.paused) {
+                        videoElement.play();
+                        playButtonElement.src = "./Img/Pausebt.png"; // 재생 버튼 이미지 변경
+                        setTimeout(function() {
+                            playButtonElement.style.opacity = '0';
+                            playButtonElement.style.transition = 'opacity 1s ease-out';
+                        }, 300);
+                    } else {
+                        videoElement.pause();
+                        playButtonElement.src = "./Img/Pausebt.png"; // 일시정지 버튼 이미지 변경
+                        playButtonElement.style.opacity = '1';
+                        playButtonElement.style.transition = 'opacity 1s ease-out';
+                    }
+                });
+
+                videoElement.addEventListener('click', function() {
+                    if (videoElement.paused) {
+                        videoElement.play();
+                        playButtonElement.src = "./Img/Playbt.png";
+                        playButtonElement.style.opacity = '0';
+                        playButtonElement.style.transition = 'opacity 1s ease-out';
+                    } else {
+                        videoElement.pause();
+                        playButtonElement.src = "./Img/Pausebt.png"; // 일시정지 버튼 이미지 변경
+                        playButtonElement.style.opacity = '1';
+                        playButtonElement.style.transition = 'opacity 1s ease-out';
+                    }
+});
+            };
