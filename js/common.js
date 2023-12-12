@@ -1,7 +1,7 @@
             $(document).ready(function () {
                 var previousScroll = 0; // 여기에서 previousScroll 변수를 선언하고 초기값을 할당합니다.
                 var i = 0;
-                var images = ['../Img/mainBack.png', '../Img/mainBack2.png', '../Img/mainBack3.png', '../Img/mainBack4.png']; // 여기에 이미지 경로를 넣으세요.
+                var images = ['../Img/mBack.png', '../Img/mBack2.png', '../Img/mBack3.png', '../Img/mBack4.png']; // 여기에 이미지 경로를 넣으세요.
                 var intervalID = null;
 
                 function changeBackground() {
