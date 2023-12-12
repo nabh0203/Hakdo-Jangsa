@@ -15,6 +15,12 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video { margin: 0; padding: 0; border: 0; font-family: "Pretendard Variable"; vertical-align: baseline; text-decoration: none; list-style: none; color: black; } 
 * { box-sizing: border-box; } 
 
+
+::-webkit-scrollbar { width: 5px; /* 스크롤바의 너비 */} 
+/* 스크롤바의 트랙(바탕)을 디자인합니다. */
+::-webkit-scrollbar-track { background: #000000; /* 트랙의 배경색 */} 
+/* 스크롤바의 핸들(움직이는 부분)을 디자인합니다. */
+::-webkit-scrollbar-thumb { background: #ffffff; /* 핸들의 배경색 */ border-radius: 20px;} 
 /* css 초기화 */
 body { height: 8120px; overflow-x:hidden; background-color: black; } 
 p { color: white; } 
